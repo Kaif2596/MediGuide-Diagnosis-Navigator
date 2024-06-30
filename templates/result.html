@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.result-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-box p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.result-box p:first-child {
+    margin-top: 0;
+}
+
+.result-box p:last-child {
+    margin-bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Predicted Disease: {{ prediction }}</p>
+    <p>Description: {{ description }}</p>
+</body>
+</html>

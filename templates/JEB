@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediGuide</title>
+    <!-- Link to Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!STYLE.CSS>
+    <style>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+#search {
+    border-radius: 8px 0 0 8px;
+}
+
+#clearSearch {
+    border-radius: 0 8px 8px 0;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    color: #495057;
+    border-color: #495057;
+}
+
+.form-check-input:checked + .form-check-label {
+    color: #007bff;
+    font-weight: bold;
+}
+
+<!/STYLE.CSS>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">MediGuide-Diagnosis Navigator</h1>
+        <!-- Search Bar with Dropdown -->
+        <form action="{{ url_for('index') }}" method="get">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Search symptoms">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch">Clear Search</button>
+                    </div>
+                </div>
+                <div id="searchDropdown" class="dropdown-menu" aria-labelledby="search">
+                    <!-- Dropdown options will be populated dynamically -->
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <hr>
+        <!-- Display Symptom Data -->
+        <form action="/submit" method="post">
+            {% for index, row in symptom_data.iterrows() %}
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="symptom{{ index }}" name="symptom_{{ loop.index0 }}" value="{{ row['weight'] }}">
+                <label class="form-check-label" for="symptom{{ index }}">{{ row['Symptom'] }} (Weight: {{ row['weight'] }})</label>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Link to Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link to your custom JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
