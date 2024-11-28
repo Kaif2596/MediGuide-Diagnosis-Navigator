@@ -78,5 +78,5 @@ python app.py
 
 **Step 3 : It will show the prediction result**
 
-![image alt](
+![image alt](https://github.com/Kaif2596/MediGuide-Diagnosis-Navigator/blob/main/Image%2003.png?raw=true)
 
