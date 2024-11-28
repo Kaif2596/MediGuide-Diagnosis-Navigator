@@ -71,3 +71,12 @@ python app.py
 
 ![image alt](https://github.com/Kaif2596/MediGuide-Diagnosis-Navigator/blob/main/Image%2001.jpg?raw=true)
 
+
+**Step 2 : Select the submit button**
+
+![image alt](https://github.com/Kaif2596/MediGuide-Diagnosis-Navigator/blob/main/Image%2002.png?raw=true)
+
+**Step 3 : It will show the prediction result**
+
+![image alt](
+
