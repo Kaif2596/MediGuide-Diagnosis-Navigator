@@ -67,5 +67,7 @@ python app.py
 4.) Open your browser and navigate to http://localhost:5000.
 ## 📊 Demo
 
-Step 1 : Select the Symptoms
+**Step 1 : Select the Symptoms**
+
+![image alt](https://github.com/Kaif2596/MediGuide-Diagnosis-Navigator/blob/main/Image%2001.jpg?raw=true)
 
